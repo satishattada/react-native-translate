@@ -1,13 +1,13 @@
 {
-  "name": "react-native-i18n",
-  "version": "2.0.15",
-  "description": "Provide I18n to your React Native application",
+  "name": "react-native-translate",
+  "version": "1.0.0",
+  "description": "Provides I18n to your React Native application",
   "license": "MIT",
-  "author": "Alexander Zaytsev",
+  "author": "Satish Attada",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "github.com/AlexanderZaytsev/react-native-i18n.git"
+    "url": "https://github.com/satishattada/react-native-translate.git"
   },
   "keywords": [
     "react-native",

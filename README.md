@@ -1,10 +1,7 @@
-# ⚠️ This package is deprecated
 
-_This library is deprecated in favor of [react-native-localize](https://github.com/react-native-community/react-native-localize). You can use react-native-localize with [I18n-js](https://github.com/fnando/i18n-js) (but also with [react-intl](https://github.com/yahoo/react-intl), [react-i18next](https://github.com/i18next/react-i18next), etc. The choice is yours!)_
 
-<img src="https://cdn0.iconfinder.com/data/icons/material-design-ii-glyph/614/3010_-_Translate-512.png" width="100" align="left" />
 
-# react-native-i18n
+# react-native-translate
 
 Integrates [I18n.js](https://github.com/fnando/i18n-js) with React Native. Uses the user preferred locale as default.
 <br/>
@@ -14,17 +11,17 @@ Integrates [I18n.js](https://github.com/fnando/i18n-js) with React Native. Uses 
 
 **Using yarn (recommended)**
 
-`$ yarn add react-native-i18n`
+`$ yarn add react-native-translate`
 
 **Using npm**
 
-`$ npm install react-native-i18n --save`
+`$ npm install react-native-translate --save`
 
 ## Automatic setup
 
 After installing the npm package you need to link the native modules.
 
-If you're using React-Native >= 0.29 just link the library with the command `react-native link react-native-i18n`.
+If you're using React-Native >= 0.29 just link the library with the command `react-native link react-native-translate`.
 
 If you're using React-Native < 0.29, install [rnpm](https://github.com/rnpm/rnpm) with the command `npm install -g rnpm` and then link the library with the command `rnpm link`.
 
@@ -35,7 +32,7 @@ If you're having any issue you can also try to install the library manually as f
 After installing the npm package, add the following line to your Podfile
 
 ```ruby
-pod 'RNI18n', :path => '../node_modules/react-native-i18n'
+pod 'RNI18n', :path => '../node_modules/react-native-translate'
 ```
 
 and run
@@ -59,15 +56,15 @@ $ open <your-project>.xcodeproj
 
 And add the localizations you will support as shown here:
 
-![adding locales](https://github.com/AlexanderZaytsev/react-native-i18n/blob/master/docs/adding-locales.png?raw=true)
+![adding locales](https://github.com/AlexanderZaytsev/react-native-translate/blob/master/docs/adding-locales.png?raw=true)
 
 ### Android
 
-Add `react-native-i18n` to your `./android/settings.gradle` file as follows:
+Add `react-native-translate` to your `./android/settings.gradle` file as follows:
 
 ```gradle
-include ':app', ':react-native-i18n'
-project(':react-native-i18n').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-i18n/android')
+include ':app', ':react-native-translate'
+project(':react-native-translate').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-translate/android')
 ```
 
 Include it as dependency in `./android/app/build.gradle` file:
@@ -75,7 +72,7 @@ Include it as dependency in `./android/app/build.gradle` file:
 ```gradle
 dependencies {
     // ...
-    compile project(':react-native-i18n')
+    compile project(':react-native-translate')
 }
 ```
 
@@ -105,8 +102,8 @@ After that, you will need to recompile your project with `react-native run-andro
 ## Usage
 
 ```javascript
-import I18n from 'react-native-i18n';
-// OR const I18n = require('react-native-i18n').default
+import I18n from 'react-native-translate';
+// OR const I18n = require('react-native-translate').default
 
 class Demo extends React.Component {
   render() {
@@ -146,7 +143,7 @@ export default {
 
 // app/i18n/i18n.js
 
-import I18n from 'react-native-i18n';
+import I18n from 'react-native-translate';
 import en from './locales/en';
 import fr from './locales/fr';
 
@@ -201,7 +198,7 @@ For a device with a `en_GB` locale this will return `Hi from the UK!'`, for a de
 You can get the user preferred locales with the `getLanguages` method:
 
 ```javascript
-import { getLanguages } from 'react-native-i18n';
+import { getLanguages } from 'react-native-translate';
 
 getLanguages().then(languages => {
   console.log(languages); // ['en-US', 'en']

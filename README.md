@@ -1,6 +1,4 @@
 
-
-
 # react-native-translate
 
 Integrates [I18n.js](https://github.com/fnando/i18n-js) with React Native. Uses the user preferred locale as default.
@@ -97,7 +95,6 @@ protected List<ReactPackage> getPackages() {
 
 After that, you will need to recompile your project with `react-native run-android`.
 
-**⚠️ Important: You'll need to install Android build tools 27.0.3**
 
 ## Usage
 
@@ -116,15 +113,15 @@ I18n.fallbacks = true;
 
 I18n.translations = {
   en: {
-    greeting: 'Hi!',
+    greeting: 'Hello!',
   },
-  fr: {
-    greeting: 'Bonjour!',
+  de: {
+    greeting: 'Hallo!',
   },
 };
 ```
 
-This will render `Hi!` for devices with the English locale, and `Bonjour!` for devices with the French locale.
+This will render `Hello!` for devices with the English locale, and `Hallo!` for devices with the German locale.
 
 ## Usage with multiple location files
 
@@ -132,26 +129,26 @@ This will render `Hi!` for devices with the English locale, and `Bonjour!` for d
 // app/i18n/locales/en.js
 
 export default {  
-  greeting: 'Hi!'
+  greeting: 'Hallo!'
 };
 
-// app/i18n/locales/fr.js
+// app/i18n/locales/de.js
 
 export default {  
-  greeting: 'Bonjour!'
+  greeting: 'Hallo!'
 };
 
 // app/i18n/i18n.js
 
 import I18n from 'react-native-translate';
 import en from './locales/en';
-import fr from './locales/fr';
+import de from './locales/de';
 
 I18n.fallbacks = true;
 
 I18n.translations = {
   en,
-  fr
+  de
 };
 
 export default I18n;
@@ -171,27 +168,28 @@ class Demo extends React.Component {
 
 ### Fallbacks
 
-When fallbacks are enabled (which is generally recommended), `i18n.js` will try to look up translations in the following order (for a device with `en_US` locale):
+When fallbacks are enabled (which is generally recommended), `i18n.js` will try to look up translations in the following order (for a device with `de_DE` locale):
 
 - en-US
 - en
+- de
 
-**Note**: iOS 8 locales use underscored (`en_US`) but `i18n.js` locales are dasherized (`en-US`). This conversion is done automatically for you.
+**Note**: iOS 8 locales use underscored (`de_DE`) but `i18n.js` locales are dasherized (`de-DE`). This conversion is done automatically for you.
 
 ```javascript
 I18n.fallbacks = true;
 
 I18n.translations = {
   en: {
-    greeting: 'Hi!',
+    greeting: 'Hello!',
   },
   'en-GB': {
-    greeting: 'Hi from the UK!',
+    greeting: 'Hello, How are you',
   },
 };
 ```
 
-For a device with a `en_GB` locale this will return `Hi from the UK!'`, for a device with a `en_US` locale it will return `Hi!`.
+For a device with a `en_GB` locale this will return `Hello, How are you'`, for a device with a `en_US` locale it will return `Hello!`.
 
 ### Device's locales
 

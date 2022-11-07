@@ -1,6 +1,6 @@
 {
   "name": "react-native-language",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provides I18n to your React Native application",
   "license": "MIT",
   "author": "Satish Attada",
